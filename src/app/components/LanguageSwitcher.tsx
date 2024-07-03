@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useRouter } from 'next/navigation';
-import { usePathname } from 'next/navigation';
-import { useTranslation } from 'react-i18next';
-import i18nConfig from '@/app/i18n/i18n.config';
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { useTranslation } from "react-i18next";
+import i18nConfig from "@/app/i18n/i18n.config";
 
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
@@ -11,7 +11,7 @@ export default function LanguageSwitcher() {
   const router = useRouter();
   const currentPathname = usePathname();
 
-  const handleChange = (e: any ) => {
+  const handleChange = (e: any) => {
     const newLocale = e.target.value;
 
     // set cookie for next-i18n-router
@@ -22,13 +22,11 @@ export default function LanguageSwitcher() {
     document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
 
     // redirect to the new locale path
-    if (
-      currentLocale === i18nConfig.defaultLocale
-    ) {
-      router.push('/' + newLocale + currentPathname);
+    if (currentLocale === i18nConfig.defaultLocale) {
+      router.push("/" + newLocale + currentPathname);
     } else {
       router.push(
-        currentPathname.replace(`/${currentLocale}`, `/${newLocale}`)
+        currentPathname.replace(`/${currentLocale}`, `/${newLocale}`),
       );
     }
 

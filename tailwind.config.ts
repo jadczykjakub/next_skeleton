@@ -8,6 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        '8xl': '90rem', // Define the desired width here
+        '9xl': '100rem',
+        '10xl': '120rem',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

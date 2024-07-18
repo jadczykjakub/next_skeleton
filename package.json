@@ -9,7 +9,6 @@
     "lint": "next lint",
     "format": "prettier --check .",
     "format:fix": "prettier --write --list-different .",
-    "prepare": "husky install"
   },
   "dependencies": {
     "classnames": "^2.5.1",

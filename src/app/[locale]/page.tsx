@@ -7,20 +7,20 @@ import { cn } from '../helpers/cn'
 const i18nNamespaces = ['common']
 
 export default async function Home({ params: { locale } }: any) {
-    const { t, resources } = await initTranslations(locale, ['common'])
+  const { t, resources } = await initTranslations(locale, ['common'])
 
-    return (
-        <TranslationsProvider
-            namespaces={i18nNamespaces}
-            locale={locale}
-            resources={resources}
-        >
-            <main className="px-4 md:px8 max-w-8xl mx-auto ">
-                <ClientComponent />
-                <LanguageSwitcher />
-                <h2>{t('title')}</h2>
-                <div>title</div>
-            </main>
-        </TranslationsProvider>
-    )
+  return (
+    <TranslationsProvider
+      namespaces={i18nNamespaces}
+      locale={locale}
+      resources={resources}
+    >
+      <main>
+        <ClientComponent />
+        <h2>{t('title')}</h2>
+        <div>title</div>
+        <LanguageSwitcher />
+      </main>
+    </TranslationsProvider>
+  )
 }

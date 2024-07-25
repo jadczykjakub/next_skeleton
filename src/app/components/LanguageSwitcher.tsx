@@ -31,6 +31,8 @@ export default function LanguageSwitcher() {
     router.refresh()
   }
 
+  console.log(currentLocale)
+
   return (
     <select onChange={handleChange} value={currentLocale}>
       <option value="en">English</option>
